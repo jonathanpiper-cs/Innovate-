@@ -22,6 +22,7 @@ export default function Home(props: Props) {
   }
 
   useEffect(() => {
+    console.log('hi')
     onEntryChange(() => fetchData());
   }, []);
 

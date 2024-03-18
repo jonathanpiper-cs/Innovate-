@@ -29,7 +29,7 @@ ContentstackLivePreview.init({
 	clientUrlParams: {
 		host: envConfig.CONTENTSTACK_APP_HOST,
 	},
-	ssr: false,
+	ssr: true,
 })
 
 export const { onEntryChange } = ContentstackLivePreview

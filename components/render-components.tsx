@@ -12,12 +12,14 @@ import SectionWithHtmlCode from './section-with-html-code';
 import { RenderProps } from "../typescript/component";
 
 export default function RenderComponents(props: RenderProps) {
+    console.log(props)
   const { pageComponents, blogPost, entryUid, contentTypeUid, locale } = props;
   return (
     <div
       data-pageref={entryUid}
       data-contenttype={contentTypeUid}
       data-locale={locale}
+      data-jp="hi there"
     >
       {pageComponents?.map((component, key: number) => {
         if (component.hero_banner) {

@@ -13,7 +13,7 @@ const Stack = contentstack.Stack({
 	environment: envConfig.CONTENTSTACK_ENVIRONMENT,
 	region: envConfig.CONTENTSTACK_REGION ? envConfig.CONTENTSTACK_REGION : "us",
 	live_preview: {
-		enable: true,
+		enable: false,
 		management_token: envConfig.CONTENTSTACK_MANAGEMENT_TOKEN,
 		host: envConfig.CONTENTSTACK_API_HOST,
 	},
@@ -24,7 +24,6 @@ if (envConfig.CONTENTSTACK_API_HOST) {
 }
 
 ContentstackLivePreview.init({
-	enable: false,
 	stackSdk: Stack,
 	clientUrlParams: {
 		host: envConfig.CONTENTSTACK_APP_HOST,

@@ -20,7 +20,7 @@ export default function Page(props: Props) {
   }
 
   useEffect(() => {
-    onEntryChange(() => fetchData());
+    fetchData();
   }, [page]);
 
   return getEntry.page_components ? (

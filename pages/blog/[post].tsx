@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import parse from 'html-react-parser';
 import { getPageRes, getBlogPostRes } from '../../helper';
-import Stack, { onEntryChange } from '../../contentstack-sdk';
+import Stack from '../../contentstack-sdk';
 import Skeleton from 'react-loading-skeleton';
 import RenderComponents from '../../components/render-components';
 import ArchiveRelative from '../../components/archive-relative';
@@ -24,7 +24,7 @@ export default function BlogPost({ blogPost, page, pageUrl }: {blogPost: BlogPos
   }
 
   useEffect(() => {
-    onEntryChange(() => fetchData());
+    fetchData();
   }, [blogPost]);
 
   const { post, banner } = getPost;

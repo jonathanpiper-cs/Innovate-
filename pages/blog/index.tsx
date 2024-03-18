@@ -12,19 +12,7 @@ import { Page, PostPage, PageUrl, Context } from "../../typescript/pages";
 export default function Blog({ page, posts, archivePost, pageUrl }: {page: Page, posts: PostPage, archivePost: PostPage, pageUrl: PageUrl}) {
 
   const [getBanner, setBanner] = useState(page);
-  async function fetchData() {
-    try {
-      const bannerRes = await getPageRes(pageUrl);
-      if (!bannerRes) throw new Error('Status code 404');
-      setBanner(bannerRes);
-    } catch (error) {
-      console.error(error);
-    }
-  }
 
-  useEffect(() => {
-    onEntryChange(() => fetchData());
-  }, []);
   return (
     <>
       {getBanner.page_components ? (

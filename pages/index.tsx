@@ -8,25 +8,10 @@ import { Props, Context } from "../typescript/pages"
 export default function Home(props: Props) {
 	const { page, entryUrl } = props
 
-	const [getEntry, setEntry] = useState(page)
+	// const [getEntry, setEntry] = useState(page)
 
-	useEffect(() => {
-		console.log("hi")
-
-		async function fetchData() {
-			try {
-				const entryRes = await getPageRes(entryUrl)
-				if (!entryRes) throw new Error("Status code 404")
-				setEntry(entryRes)
-			} catch (error) {
-				console.error(error)
-			}
-		}
-		fetchData()
-	}, [entryUrl])
-
-	return getEntry ? (
-		<RenderComponents pageComponents={getEntry.page_components} contentTypeUid="page" entryUid={getEntry.uid} locale={getEntry.locale} />
+    return page ? (
+		<RenderComponents pageComponents={page.page_components} contentTypeUid="page" entryUid={page.uid} locale={page.locale} />
 	) : (
 		<Skeleton count={3} height={300} />
 	)

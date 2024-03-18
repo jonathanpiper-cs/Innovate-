@@ -12,20 +12,6 @@ import { Page, BlogPosts, PageUrl } from "../../typescript/pages";
 export default function BlogPost({ blogPost, page, pageUrl }: {blogPost: BlogPosts, page: Page, pageUrl: PageUrl}) {
   
   const [getPost, setPost] = useState({ banner: page, post: blogPost });
-  async function fetchData() {
-    try {
-      const entryRes = await getBlogPostRes(pageUrl);
-      const bannerRes = await getPageRes('/blog');
-      if (!entryRes || !bannerRes) throw new Error('Status: ' + 404);
-      setPost({ banner: bannerRes, post: entryRes });
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  useEffect(() => {
-    onEntryChange(() => fetchData());
-  }, [blogPost]);
 
   const { post, banner } = getPost;
   return (

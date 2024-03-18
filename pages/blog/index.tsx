@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { onEntryChange } from '../../contentstack-sdk';
+import { onEntryChange } from '../../contentstack-sdk';
 import BlogList from '../../components/blog-list';
 import RenderComponents from '../../components/render-components';
 import { getPageRes, getBlogListRes } from '../../helper';
@@ -23,7 +23,7 @@ export default function Blog({ page, posts, archivePost, pageUrl }: {page: Page,
   }
 
   useEffect(() => {
-    fetchData();
+    onEntryChange(() => fetchData());
   }, []);
   return (
     <>

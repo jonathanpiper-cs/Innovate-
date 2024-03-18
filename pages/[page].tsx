@@ -35,7 +35,7 @@ export default function Page(props: Props) {
   );
 }
 
-export async function getServerSideProps({params}: any) {
+export async function getStaticProps({params}: any) {
   try {
       const entryUrl = params.page.includes('/') ? params.page:`/${params.page}`
       const entryRes = await getPageRes(entryUrl);
@@ -50,4 +50,11 @@ export async function getServerSideProps({params}: any) {
   } catch (error) {
     return { notFound: true };
   }
+}
+
+export async function getStaticPaths() {
+    const paths = ['about-us', 'contact-us'].map((p) => {
+        return {params: { page: p }}
+    })
+    return { paths, fallback: false }
 }

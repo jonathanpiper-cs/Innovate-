@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import parse from 'html-react-parser';
 import { getPageRes, getBlogPostRes } from '../../helper';
-import { onEntryChange } from '../../contentstack-sdk';
+import Stack, { onEntryChange } from '../../contentstack-sdk';
 import Skeleton from 'react-loading-skeleton';
 import RenderComponents from '../../components/render-components';
 import ArchiveRelative from '../../components/archive-relative';
@@ -93,8 +93,9 @@ export default function BlogPost({ blogPost, page, pageUrl }: {blogPost: BlogPos
     </>
   );
 }
-export async function getServerSideProps({ params }: any) {
+export async function getStaticProps({ params }: any) {
   try {
+    console.log(params)
     const page = await getPageRes('/blog');
     const posts = await getBlogPostRes(`/blog/${params.post}`);
     if (!page || !posts) throw new Error('404');
@@ -110,4 +111,12 @@ export async function getServerSideProps({ params }: any) {
     console.error(error);
     return { notFound: true };
   }
+}
+
+export async function getStaticPaths() {
+    const posts = await Stack.getEntry({contentTypeUid: 'blog_post'})
+    const paths = posts[0].map((p: BlogPosts) => {
+        return {params: { post: p.url.replace('/blog/', '') }}
+    })
+    return { paths, fallback: false }
 }

@@ -37,12 +37,12 @@ export default function Home(props: Props) {
   );
 }
 
-export async function getServerSideProps(context: Context) {
+export async function getStaticProps(context: Context) {
   try {
-    const entryRes = await getPageRes(context.resolvedUrl);
+    const entryRes = await getPageRes('/');
     return {
       props: {
-        entryUrl: context.resolvedUrl,
+        entryUrl: '/',
         page: entryRes,
       },
     };

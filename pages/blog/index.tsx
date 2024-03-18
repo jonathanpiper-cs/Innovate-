@@ -63,9 +63,9 @@ export default function Blog({ page, posts, archivePost, pageUrl }: {page: Page,
   );
 }
 
-export async function getServerSideProps(context: Context) {
+export async function getStaticProps(context: Context) {
   try {
-    const page = await getPageRes(context.resolvedUrl);
+    const page = await getPageRes('/blog');
     const result: PostPage = await getBlogListRes();
 
     const archivePost = [] as any;
@@ -79,7 +79,7 @@ export async function getServerSideProps(context: Context) {
     });
     return {
       props: {
-        pageUrl: context.resolvedUrl,
+        pageUrl: '/blog',
         page,
         posts,
         archivePost,

@@ -52,7 +52,7 @@ export default function Section({ section }: {section : SectionProps}) {
     return (
       <img
         {...section.image.$?.url as {}}
-        src={section.image.url.replace('images.contentstack.io/v3/assets', 'd14uo10ud99a59.cloudfront.net')}
+        src={section.image.url.replace('images.contentstack.io', 'd14uo10ud99a59.cloudfront.net')}
         alt={section.image.filename}
         key={key}
       />

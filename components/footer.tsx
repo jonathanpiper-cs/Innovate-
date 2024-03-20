@@ -98,7 +98,7 @@ export default function Footer({ footer, entries }: {footer: FooterProps, entrie
                 >
                   {social.icon && (
                     <img
-                      src={social.icon.url.replace('images.contentstack.io/v3/assets', 'd14uo10ud99a59.cloudfront.net')}
+                      src={social.icon.url.replace('images.contentstack.io', 'd14uo10ud99a59.cloudfront.net')}
                       alt={social.link.title}
                       {...social.icon.$?.url as {}}
                     />

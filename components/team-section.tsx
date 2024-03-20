@@ -45,7 +45,7 @@ export default function TeamSection({ ourTeam }: {ourTeam : TeamProps}) {
             {employee.image && (
               <img
                 alt={employee.image.filename}
-                src={employee.image.url.replace('images.contentstack.io/v3/assets', 'd14uo10ud99a59.cloudfront.net')}
+                src={employee.image.url.replace('images.contentstack.io', 'd14uo10ud99a59.cloudfront.net')}
                 {...employee.image.$?.url as {}}
               />
             )}

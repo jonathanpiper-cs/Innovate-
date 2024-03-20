@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import parse from 'html-react-parser';
 import { Action,Image } from '../typescript/action';
@@ -39,7 +40,7 @@ export default function AboutSectionBucket({ sectionWithBuckets }: {sectionWithB
           <img
             className='mission-icon'
             {...bucket.icon.$?.url as {}}
-            src={bucket.icon.url}
+            src={bucket.icon.url.replace('images.contentstack.io', 'd14uo10ud99a59.cloudfront.net')}
             alt='art work'
           />
         )}

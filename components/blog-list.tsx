@@ -41,7 +41,7 @@ function BlogList({ bloglist }: { bloglist: BloglistProps }) {
           <a>
             <img
               className='blog-list-img'
-              src={bloglist.featured_image.url.replace('images.contentstack.io', process.env.NEXT_PUBLIC_CDN_HOST as string)}
+              src={bloglist.featured_image.url.replace('images.contentstack.io', process.env.CDN_HOST as string)}
               alt='blog img'
               {...bloglist.featured_image.$?.url as {}}
             />

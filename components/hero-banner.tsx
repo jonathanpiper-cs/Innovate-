@@ -70,7 +70,7 @@ export default function HeroBanner(props: BannerProps) {
       {banner.banner_image ? (
         <img
           alt={banner.banner_image.filename}
-          src={banner.banner_image.url.replace('images.contentstack.io', process.env.NEXT_PUBLIC_CDN_HOST as string)}
+          src={banner.banner_image.url.replace('images.contentstack.io', process.env.CDN_HOST as string)}
           {...banner.banner_image.$?.url as {}}
         />
       ) : (

@@ -52,7 +52,7 @@ export default function Section({ section }: {section : SectionProps}) {
     return (
       <img
         {...section.image.$?.url as {}}
-        src={section.image.url.replace('images.contentstack.io', process.env.NEXT_PUBLIC_CDN_HOST as string)}
+        src={section.image.url.replace('images.contentstack.io', process.env.CDN_HOST as string)}
         alt={section.image.filename}
         key={key}
       />

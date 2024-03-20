@@ -5,6 +5,8 @@ import { getPageRes } from "../helper"
 import Skeleton from "react-loading-skeleton"
 import { Props } from "../typescript/pages"
 
+console.log(process.env.CDN_HOST)
+
 export default function Page(props: Props) {
 	const { page, entryUrl } = props
 	const [getEntry, setEntry] = useState(page)

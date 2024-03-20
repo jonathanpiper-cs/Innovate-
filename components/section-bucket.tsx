@@ -46,7 +46,7 @@ export default function SectionBucket({ section }: {section: BucketProps}) {
             {bucket.icon && (
               <img
                 {...bucket.icon.$?.url as {}}
-                src={bucket.icon.url.replace('images.contentstack.io', process.env.NEXT_PUBLIC_CDN_HOST as string)}
+                src={bucket.icon.url.replace('images.contentstack.io', process.env.CDN_HOST as string)}
                 alt='bucket icon'
               />
             )}

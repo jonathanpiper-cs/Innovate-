@@ -73,7 +73,7 @@ export default function Header({ header, entries }: {header: HeaderProps, entrie
               <a className='logo-tag' title='Contentstack'>
                 <img
                   className='logo'
-                  src={headerData.logo.url}
+                  src={headerData.logo.url.replace('images.contentstack.io', 'd14uo10ud99a59.cloudfront.net')}
                   alt={headerData.title}
                   title={headerData.title}
                   {...headerData.logo.$?.url as {}}

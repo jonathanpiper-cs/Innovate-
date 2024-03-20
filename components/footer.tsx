@@ -56,7 +56,7 @@ export default function Footer({ footer, entries }: {footer: FooterProps, entrie
             <Link href='/'>
               <a className='logo-tag'>
                 <img
-                  src={footerData.logo.url.replace('images.contentstack.io/v3/assets', 'd14uo10ud99a59.cloudfront.net')}
+                  src={footerData.logo.url.replace('images.contentstack.io', 'd14uo10ud99a59.cloudfront.net')}
                   alt={footerData.title}
                   title={footerData.title}
                   {...footer.logo.$?.url as {}}

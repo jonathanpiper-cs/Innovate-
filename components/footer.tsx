@@ -56,7 +56,7 @@ export default function Footer({ footer, entries }: {footer: FooterProps, entrie
             <Link href='/'>
               <a className='logo-tag'>
                 <img
-                  src={footerData.logo.url.replace('images.contentstack.io', 'd14uo10ud99a59.cloudfront.net')}
+                  src={footerData.logo.url.replace('images.contentstack.io', process.env.NEXT_PUBLIC_CDN_HOST as string)}
                   alt={footerData.title}
                   title={footerData.title}
                   {...footer.logo.$?.url as {}}
@@ -98,7 +98,7 @@ export default function Footer({ footer, entries }: {footer: FooterProps, entrie
                 >
                   {social.icon && (
                     <img
-                      src={social.icon.url.replace('images.contentstack.io', 'd14uo10ud99a59.cloudfront.net')}
+                      src={social.icon.url.replace('images.contentstack.io', process.env.NEXT_PUBLIC_CDN_HOST as string)}
                       alt={social.link.title}
                       {...social.icon.$?.url as {}}
                     />

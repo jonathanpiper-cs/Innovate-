@@ -65,7 +65,7 @@ export default function BlogSection(props: FeaturedBlogProps) {
             {blog.featured_image && (
               <img
                 {...blog.featured_image.$?.url as {}}
-                src={blog.featured_image.url.replace('images.contentstack.io', 'd14uo10ud99a59.cloudfront.net')}
+                src={blog.featured_image.url.replace('images.contentstack.io', process.env.NEXT_PUBLIC_CDN_HOST as string)}
                 alt={blog.featured_image.filename}
                 className='blog-post-img'
               />

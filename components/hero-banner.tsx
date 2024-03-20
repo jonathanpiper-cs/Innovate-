@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Link from 'next/link';
 import { Image, Action } from "../typescript/action";
@@ -69,7 +70,7 @@ export default function HeroBanner(props: BannerProps) {
       {banner.banner_image ? (
         <img
           alt={banner.banner_image.filename}
-          src={banner.banner_image.url}
+          src={banner.banner_image.url.replace('images.contentstack.io/v3/assets', 'd14uo10ud99a59.cloudfront.net')}
           {...banner.banner_image.$?.url as {}}
         />
       ) : (

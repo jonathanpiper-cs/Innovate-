@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import parse from 'html-react-parser';
@@ -55,7 +56,7 @@ export default function Footer({ footer, entries }: {footer: FooterProps, entrie
             <Link href='/'>
               <a className='logo-tag'>
                 <img
-                  src={footerData.logo.url}
+                  src={footerData.logo.url.replace('images.contentstack.io/v3/assets', 'd14uo10ud99a59.cloudfront.net')}
                   alt={footerData.title}
                   title={footerData.title}
                   {...footer.logo.$?.url as {}}
@@ -97,7 +98,7 @@ export default function Footer({ footer, entries }: {footer: FooterProps, entrie
                 >
                   {social.icon && (
                     <img
-                      src={social.icon.url}
+                      src={social.icon.url.replace('images.contentstack.io/v3/assets', 'd14uo10ud99a59.cloudfront.net')}
                       alt={social.link.title}
                       {...social.icon.$?.url as {}}
                     />

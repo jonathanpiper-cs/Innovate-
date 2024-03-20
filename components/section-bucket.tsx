@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Link from 'next/link';
 import parse from 'html-react-parser';
@@ -45,7 +46,7 @@ export default function SectionBucket({ section }: {section: BucketProps}) {
             {bucket.icon && (
               <img
                 {...bucket.icon.$?.url as {}}
-                src={bucket.icon.url}
+                src={bucket.icon.url.replace('images.contentstack.io/v3/assets', 'd14uo10ud99a59.cloudfront.net')}
                 alt='bucket icon'
               />
             )}

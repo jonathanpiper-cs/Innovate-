@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import moment from 'moment';
 import parse from 'html-react-parser';
@@ -40,7 +41,7 @@ function BlogList({ bloglist }: { bloglist: BloglistProps }) {
           <a>
             <img
               className='blog-list-img'
-              src={bloglist.featured_image.url}
+              src={bloglist.featured_image.url.replace('images.contentstack.io/v3/assets', 'd14uo10ud99a59.cloudfront.net')}
               alt='blog img'
               {...bloglist.featured_image.$?.url as {}}
             />

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Link from 'next/link';
 import { Image, Action } from "../typescript/action";
@@ -51,7 +52,7 @@ export default function Section({ section }: {section : SectionProps}) {
     return (
       <img
         {...section.image.$?.url as {}}
-        src={section.image.url}
+        src={section.image.url.replace('images.contentstack.io/v3/assets', 'd14uo10ud99a59.cloudfront.net')}
         alt={section.image.filename}
         key={key}
       />

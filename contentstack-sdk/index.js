@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import * as contentstack from "contentstack"
 import * as Utils from "@contentstack/utils"
 

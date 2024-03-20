@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Link from 'next/link';
 import parse from 'html-react-parser';
@@ -64,7 +65,7 @@ export default function BlogSection(props: FeaturedBlogProps) {
             {blog.featured_image && (
               <img
                 {...blog.featured_image.$?.url as {}}
-                src={blog.featured_image.url}
+                src={blog.featured_image.url.replace('images.contentstack.io/v3/assets', 'd14uo10ud99a59.cloudfront.net')}
                 alt={blog.featured_image.filename}
                 className='blog-post-img'
               />
